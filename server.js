@@ -55,7 +55,10 @@ app.patch("/api/todos/:id", (req, res) => {
   if (status) todo.status = status;
   res.json(todo);
 });
-
+// ✅ Simple test route to check if backend works
+app.get("/api/ping", (req, res) => {
+  res.send("pong");
+});
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Learning Dashboard API running on http://localhost:${PORT}`);
